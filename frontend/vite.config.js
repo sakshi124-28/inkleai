@@ -15,7 +15,13 @@ export default defineConfig({
   preview: {
     port: process.env.PORT || 5173,
     host: '0.0.0.0',
-    strictPort: false
+    strictPort: false,
+    proxy: {
+      '/api': {
+        target: process.env.VITE_API_BASE_URL?.replace('/api/v1', '') || 'http://localhost:3000',
+        changeOrigin: true
+      }
+    }
   },
   build: {
     outDir: 'dist',
