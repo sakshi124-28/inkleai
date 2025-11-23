@@ -1,0 +1,78 @@
+.activity-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.activity-item {
+  background: white;
+  border-radius: 8px;
+  padding: 15px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s;
+}
+
+.activity-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.activity-with-post {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.activity-header {
+  background: white;
+  border-radius: 8px;
+  padding: 12px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.activity-message {
+  color: #333;
+  margin-bottom: 5px;
+  line-height: 1.6;
+}
+
+.activity-actor {
+  font-weight: 600;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.activity-actor:hover {
+  text-decoration: underline;
+}
+
+.activity-link {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 5px;
+}
+
+.activity-link:hover {
+  text-decoration: underline;
+}
+
+.activity-time {
+  font-size: 12px;
+  color: #999;
+  margin-top: 5px;
+}
+
+.activity-feed-empty {
+  text-align: center;
+  padding: 60px 40px;
+  color: #666;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.activity-feed-empty p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+

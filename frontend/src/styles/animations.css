@@ -1,0 +1,319 @@
+/* Global Animations */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Page Transitions */
+.page-enter {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.page-container {
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* Card Animations */
+.card {
+  animation: fadeIn 0.5s ease-out;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Button Animations */
+.btn {
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+/* Table Row Animations */
+.admin-table tbody tr {
+  animation: fadeIn 0.3s ease-out;
+  animation-fill-mode: both;
+}
+
+.admin-table tbody tr:nth-child(1) { animation-delay: 0.05s; }
+.admin-table tbody tr:nth-child(2) { animation-delay: 0.1s; }
+.admin-table tbody tr:nth-child(3) { animation-delay: 0.15s; }
+.admin-table tbody tr:nth-child(4) { animation-delay: 0.2s; }
+.admin-table tbody tr:nth-child(5) { animation-delay: 0.25s; }
+.admin-table tbody tr:nth-child(n+6) { animation-delay: 0.3s; }
+
+.admin-table tbody tr:hover {
+  transform: scale(1.01);
+  transition: transform 0.2s;
+}
+
+/* Modal Animations */
+.modal-overlay {
+  animation: fadeIn 0.2s ease-out;
+}
+
+.modal-content {
+  animation: scaleIn 0.3s ease-out;
+}
+
+/* Loading Spinner */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-spinner {
+  animation: spin 1s linear infinite;
+}
+
+/* Skeleton Loading */
+@keyframes skeleton-loading {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+  animation: skeleton-loading 1.5s ease-in-out infinite;
+}
+
+/* Notification Animations */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.notification {
+  animation: slideDown 0.3s ease-out;
+}
+
+/* Stagger Animation for Lists */
+.stagger-item {
+  animation: fadeIn 0.4s ease-out;
+  animation-fill-mode: both;
+}
+
+.stagger-item:nth-child(1) { animation-delay: 0.05s; }
+.stagger-item:nth-child(2) { animation-delay: 0.1s; }
+.stagger-item:nth-child(3) { animation-delay: 0.15s; }
+.stagger-item:nth-child(4) { animation-delay: 0.2s; }
+.stagger-item:nth-child(5) { animation-delay: 0.25s; }
+.stagger-item:nth-child(n+6) { animation-delay: 0.3s; }
+
+/* Smooth Transitions */
+* {
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+/* Input Focus Animations */
+.input:focus,
+.textarea:focus,
+.search-input:focus {
+  animation: pulse 0.3s ease-out;
+  transform: scale(1.02);
+}
+
+/* Badge Animations */
+.role-badge,
+.status-active,
+.status-deleted {
+  animation: scaleIn 0.3s ease-out;
+}
+
+/* Post Card Animations */
+.post-card {
+  animation: fadeIn 0.4s ease-out;
+  transition: all 0.3s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Activity Item Animations */
+.activity-item {
+  animation: slideIn 0.4s ease-out;
+  transition: all 0.2s;
+}
+
+.activity-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar Animations */
+.navbar-link {
+  position: relative;
+  transition: all 0.2s;
+}
+
+.navbar-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #007bff;
+  transition: width 0.3s;
+}
+
+.navbar-link:hover::after {
+  width: 100%;
+}
+
+/* Stat Card Animations */
+.stat-card {
+  animation: scaleIn 0.5s ease-out;
+  transition: transform 0.2s;
+}
+
+.stat-card:hover {
+  transform: scale(1.05);
+}
+
+/* Like Button Animation */
+.btn-like {
+  transition: all 0.2s;
+}
+
+.btn-like:hover {
+  transform: scale(1.1);
+}
+
+.btn-like:active {
+  transform: scale(0.9);
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Fade In on Mount */
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Slide In from Left */
+.slide-in-left {
+  animation: slideIn 0.4s ease-out;
+}
+
+/* Slide In from Right */
+.slide-in-right {
+  animation: slideInRight 0.4s ease-out;
+}
+
+/* Scale In */
+.scale-in {
+  animation: scaleIn 0.3s ease-out;
+}
+
