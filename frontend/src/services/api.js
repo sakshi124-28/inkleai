@@ -1,7 +1,8 @@
 import axios from 'axios'
 import { createClient } from '@supabase/supabase-js'
 
-const API_BASE_URL = '/api/v1'
+// Use environment variable for API URL, fallback to relative path for development
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api/v1'
 
 // Supabase client (if needed for direct client-side operations)
 // Only initialize if env vars are provided, otherwise create a dummy client
